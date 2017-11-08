@@ -1,0 +1,9 @@
+Alpha = 0
+Beta = 23
+
+Alpha R = 0
+Beta  R = 19.6154
+Alpha G = 0
+Beta  G = 21.25
+Alpha B = 0
+Beta  B = 21.25

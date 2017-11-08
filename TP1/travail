@@ -1,0 +1,29 @@
+1b)
+portable pixmap file format (PPM)
+portable graymap file format (PGM)
+portable bitmap file format (PBM)
+
+-Les fichiers PBM, PGM ou PPM sont composés sur la même base :
+	->le nombre magique du format (deux octets) : il indique le type de format (PBM, PGM, ou PPM) ->et la variante (binaire ou ASCII) ;
+	->un caractère d'espacement (espace, tabulation, nouvelle ligne) ;
+	->la largeur de l'image (nombre de pixels, écrit explicitement sous forme d'un nombre en caractères ASCII) ;
+	->un caractère d'espacement ;
+	->la hauteur de l'image (idem) ;
+	->un caractère d'espacement ;
+	->les données de l'image : succession des valeurs associées à chaque pixel,
+		-->l'image est codée ligne par ligne en partant du haut,
+		-->chaque ligne est codée de gauche à droite.
+
+Le format de fichier est utilisé pour des images en niveau de gris. En plus des caractéristiques de largeur et hauteur, une valeur maximale utilisée pour coder les niveaux de gris ; cette valeur doit être inférieure à 65536 (codée en caractères ASCII). Chaque niveau de gris est codé par une valeur entre 0 et cette valeur maximale, proportionnellement à son intensité. Un pixel noir est codé par la valeur 0, un pixel blanc est codé par la valeur maximale.
+
+1d)
+./main ImageIn.pgm ImageOut.pgm 0
+
+3)
+gnuplot
+plot 512 512
+plot 'profil.dat' with lines linecolor "blue"
+
+5)
+plot 'histo.dat' using 2 with lines linecolor "blue"
+replot 'histo.dat' using 2 with lines linecolor "red"
